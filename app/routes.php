@@ -14,45 +14,79 @@
 
 Route::get('/', function()
 {
-	$generator = new BadCow\LoremIpsum\Generator();
-	$paragraphs = $generator -> getParagraphs(5);
-	echo implode('<p>', $paragraphs);
-
 	return View::make('index');
 });
 
 Route::get('/lorem-ipsum', function(){
-	
-	$view = '<form method = "POST" action = "/lorem-ipsum">';
-	$view .= 'How Many Paragraphs?: <input type = "text" name = "LI Generator">';
-	$view .= '<input type = "Submit">';
-	$view .= '</form>';
-	
-	$input = Input::all();	
-	
-
+	return View::make('lorem-ipsum');
 });
 
-/*
 Route::Post('/lorem-ipsum', function(){
-	$input = Input::all();
-	$generator = new BadCow\LoremIpsum\Generator();
-	$paragraphs = $generator -> getParagraphs(5);
+	$input = Input::get('numPara');
+	$generator = new Badcow\LoremIpsum\Generator();
+	$paragraphs = $generator -> getParagraphs($input);
 	echo implode('<p>', $paragraphs);
-
+	return View::make('lorem-ipsum');
 });
-*/
 
 Route::get('/users', function(){
-
-	$view = '<form method = "Post" action = "/users">';
-	$view .= 'Number of Profiles?: <input type = "text" name = "Profiles">';
-	$view .= '<input type = "Submit">';
-	$view .= '</form>';
-	return $view;
-
+	return View::make('users');
 });
 
+Route::Post('/users', function(){
+	require_once '..\vendor/fzaninotto\faker\src\autoload.php';
 
+	$faker = Faker\Factory::create();
 
+	$input = Input::get('numUsers');
+	//Conditionals for birthdays and etc here. A little belabored but it gets the job done
+	if(isset($_POST['birthday']) && isset($_POST['address']) && isset($_POST['profile'])){
+		//For Each for Names
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->dateTimeThisCentury->format('Y-m-d'); 
+			echo $faker->address;
+			echo $faker->text;
+		};
+	} elseif(isset($_POST['birthday']) && isset($_POST['address'])){
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->dateTimeThisCentury->format('Y-m-d'); 
+			echo $faker->address;
+		};
+	} elseif(isset($_POST['address']) && isset($_POST['profile'])){
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->address;
+			echo $faker->text;
+		};
+	} elseif(isset($_POST['birthday']) && isset($_POST['profile'])){
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->dateTimeThisCentury->format('Y-m-d'); 
+			echo $faker->text;
+		};
+	} elseif(isset($_POST['birthday'])){
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->dateTimeThisCentury->format('Y-m-d'); 
+		};
+	} elseif(isset($_POST['address'])){
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->address;
+		};
+	} elseif(isset($_POST['profile'])){
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+			echo $faker->text;
+		};
+	} else{
+		for($i = 0; $i < $input; $i++){
+			echo $faker->name; 
+		};
+	}
 
+	return View::make('users');
+	
+});
