@@ -34,9 +34,9 @@ Route::get('/users', function(){
 	return View::make('users');
 });
 
-Route::Post('/users', function(){
-	//require '\var\www\html\p3\vendor\fzaninotto\faker\src\autoload.php';
-	require 'autoload.php';
+Route::Post('/users', function(){	
+	//require '..\fzaninotto\autoload.php';
+	//require_once '..\vendor\fzaninotto\faker\src\autoload.php';
 
 	$faker = Faker\Factory::create();
 
