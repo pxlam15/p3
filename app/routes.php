@@ -35,7 +35,7 @@ Route::get('/users', function(){
 });
 
 Route::Post('/users', function(){
-	require_once '\var\www\html\p3\vendor\fzaninotto\faker\src\autoload.php';
+	require_once '..\var\www\html\p3\vendor\fzaninotto\faker\src\autoload.php';
 
 	$faker = Faker\Factory::create();
 
