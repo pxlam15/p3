@@ -1,0 +1,44 @@
+body{
+	padding:10px;
+	font-family:consolas,courier;
+}
+
+
+form{
+
+	/* Liked a particular web form from James George "http://www.sitepoint.com/style-web-forms-css/"  Modified his Code some to match what I wanted it to look like  */
+
+	background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+	background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+	margin:auto;
+	position:relative;
+	width:300px;
+	height:125px;
+	font-family:consolas,courier;
+	font-size: 14pt;
+	line-height: 24px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding:10px;
+	border: 1px solid #999;
+	border: inset 1px solid #333;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+
+.user{
+	border:1px solid #ccc;
+	padding:10px;
+	padding-top:0px;
+	float:left;
+	width:300px;
+	margin-right:10px;
+	margin-bottom:10px;
+	height:375px;
+}

@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', function()
 {
 	return View::make('index');
@@ -36,7 +35,6 @@ Route::get('/users', function(){
 
 Route::Post('/users', function(){	
 	
-
 	$faker = Faker\Factory::create();
 
 	$input = Input::get('numUsers');
@@ -111,7 +109,4 @@ Route::Post('/users', function(){
 			echo "$name <p>"; 
 		};
 	}
-	
-	
-	
 });

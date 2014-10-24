@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+	<link rel='stylesheet' href='/css/style 1.0.css' type='text/css'>
 	<form method = "POST" action = "/users">
 		How Many User Profiles?: <select class = "numUsers" name = "numUsers">
 		<option value="1" >1</option>

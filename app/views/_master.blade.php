@@ -3,8 +3,9 @@
 <head>
 
 	<title>@yield('title')</title>
-	<h1>@yield('title')</h1>
+	<center><h1>@yield('title')</h1></center>
 	<meta charset='utf-8'>
+	<link rel='stylesheet' href='/css/style 1.0.css' type='text/css'>
 	
 </head>
 
