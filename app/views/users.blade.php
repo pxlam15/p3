@@ -21,9 +21,9 @@
 		<label for='birthday'> Birthday </label>
 		<input type='checkbox' name='birthday' val = '1'/> <br>
 
-		<label for='address'> address </label>
+		<label for='address'> Address </label>
 		<input type='checkbox' name='address' val = '1'/> <br>
 
-		<label for='profile'> profile </label>
+		<label for='profile'> Profile </label>
 		<input type='checkbox' name='profile' val = '1'/> <br>		
 @stop
