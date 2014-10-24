@@ -35,8 +35,7 @@ Route::get('/users', function(){
 });
 
 Route::Post('/users', function(){	
-	//require '..\fzaninotto\autoload.php';
-	//require_once '..\vendor\fzaninotto\faker\src\autoload.php';
+	
 
 	$faker = Faker\Factory::create();
 
